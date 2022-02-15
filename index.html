@@ -7,6 +7,15 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="date" name="" id="">
+  <input type="text" name="" id="">
 </body>
+<script>
+  const input = document.querySelector('input');
+  input.addEventListener('focus', () => {
+    input.type = 'date'
+  });
+  input.addEventListener('blur', () => {
+    input.type = 'text'
+  });
+</script>
 </html>
