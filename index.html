@@ -7,15 +7,46 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="text" name="" id="">
+  <div>
+    <input type="text" name="" id="" class="input1">
+    1
+  </div>
+  <div>
+    <input type="text" name="" id="" class="input2">
+    2
+  </div>
+  <div>
+    <input type="text" name="" id="" class="input3">
+    3
+  </div>
+  
 </body>
 <script>
-  const input = document.querySelector('input');
+  const input = document.querySelector('.input1');
   input.addEventListener('focus', () => {
     input.type = 'date'
   });
   input.addEventListener('blur', () => {
     input.type = 'text'
+  });
+
+  const input2 = document.querySelector('.input2');
+  input2.addEventListener('focus', () => {
+    input2.blur()
+    input2.type = 'date'
+    input2.focus()
+  });
+  input2.addEventListener('blur', () => {
+    input2.type = 'text'
+  });
+
+  const input3 = document.querySelector('.input3');
+  input3.addEventListener('focus', () => {
+    input3.type = 'date'
+    input3.focus()
+  });
+  input3.addEventListener('blur', () => {
+    input3.type = 'text'
   });
 </script>
 </html>
