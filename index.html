@@ -6,6 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  .input {
+    position: relative;
+    display: inline-block;
+  }
+  .input4 {
+
+  }
+  .input4._text {
+    width: 100%;
+  }
+  .input4._date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* opacity: 0; */
+  }
+</style>
 <body>
   <div>
     <input type="text" name="" id="" class="input1">
@@ -19,6 +38,12 @@
     <input type="text" name="" id="" class="input3">
     3
   </div>
+
+  <div class="input">
+    <input type="text" name="" id="" class="input4 _text">
+    <input type="date" name="" id="" class="input4 _date">
+    4
+  </div>
   
 </body>
 <script>
@@ -31,10 +56,14 @@
   });
 
   const input2 = document.querySelector('.input2');
-  input2.addEventListener('focus', () => {
-    input2.blur()
-    input2.type = 'date'
+  input2.addEventListener('click', () => {
+    console.log('click');
     input2.focus()
+  });
+  input2.addEventListener('focus', () => {
+    console.log('focus');
+    input2.type = 'date'
+    input2.blur()
   });
   input2.addEventListener('blur', () => {
     input2.type = 'text'
@@ -48,5 +77,8 @@
   input3.addEventListener('blur', () => {
     input3.type = 'text'
   });
+
+  const input4 = document.querySelector('.input4');
+
 </script>
 </html>
